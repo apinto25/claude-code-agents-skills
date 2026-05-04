@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(pyenv *)"
+    ],
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.*)"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+# Dependencies and virtual environments
+**/.venv/
+**/node_modules/
+
+# Compiled files
+**/__pycache__/
+**/*.pyc
+
+# Database files
+**/*.db
+
+# Environment variables
+**/.env
+**/.env.*
+
+# uv lock (large, not useful for context)
+**/uv.lock
