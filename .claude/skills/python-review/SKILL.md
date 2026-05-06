@@ -10,7 +10,7 @@ model: claude-sonnet-4-6
 
 Review the specified Python code following these steps:
 
-1. Run the validation scripts on the specified file: `python scripts/run_checks.py $ARGUMENTS` to identify style and lint issues
+1. Run the validation scripts on the specified file: `uv run scripts/run_checks.py $ARGUMENTS` to identify style and lint issues
 2. Check for missing type hints in function signatures
 3. Consult `references/style-guide.md` and verify docstrings follow Google style format
 4. Identify common anti-patterns:

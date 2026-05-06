@@ -5,14 +5,14 @@ def run_checks(filepath):
     results = []
 
     ruff = subprocess.run(
-        ["ruff", "check", filepath],
+        ["uv", "run", "ruff", "check", filepath],
         capture_output=True, text=True
     )
     if ruff.stdout:
         results.append(f"RUFF:\n{ruff.stdout}")
 
     mypy = subprocess.run(
-        ["mypy", filepath],
+        ["uv", "run", "mypy", filepath],
         capture_output=True, text=True
     )
     if mypy.stdout:
