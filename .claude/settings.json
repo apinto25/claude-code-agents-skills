@@ -8,5 +8,29 @@
       "Read(**/.env)",
       "Read(**/.env.*)"
     ]
+  },
+  "hooks": {
+    "SubagentStart": [
+      {
+        "matcher": "test-runner|test-coverage",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd grades-api && uv run python -m pytest --version; echo 'SubagentStart hook fired' >> $CLAUDE_PROJECT_DIR/hooks.log"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "test-runner|test-coverage",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd grades-api && uv run pytest --cov=. --cov-report=html -q; echo 'SubagentStop hook fired' >> $CLAUDE_PROJECT_DIR/hooks.log"
+          }
+        ]
+      }
+    ]
   }
 }
